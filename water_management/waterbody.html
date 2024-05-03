@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Data</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            background-color: #007bff; /* Blue background */
+            color: #fff; /* White font color */
+            padding: 10px 0; /* Add padding */
+        }
+
+        form {
+            width: 60%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color:#007bff ;
+color: #fff;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #fff;
+            color:#007bff;
+        }
+    </style>
+</head>
+<body>
+<nav>
+        <a href="home.html">Home</a>
+        <a href="waterbody.html">Water Body</a>
+        <a href="labanalysis.html">Laboratory Analysis</a>
+        <a href="report.php"> Report </a>
+    </nav>
+    <h2>Water Body & Quality Data</h2>
+    <form action="water_body_data.php" method="POST">
+        <!-- Water Body Information -->
+        <label for="water_body_name">Water Body Name:</label>
+        <input type="text" id="water_body_name" name="water_body_name" required>
+
+        <label for="water_body_type">Water Body Type:</label>
+        <select id="water_body_type" name="water_body_type" required>
+            <option value="River">River</option>
+            <option value="Lake">Lake</option>
+            <option value="Reservoir">Reservoir</option>
+        </select>
+
+        <label for="water_body_location">Water Body Location:</label>
+        <input type="text" id="water_body_location" name="water_body_location" required>
+
+        <label for="water_body_area">Water Body Area (in square kilometers):</label>
+        <input type="number" id="water_body_area" name="water_body_area" step="any" required>
+
+        <!-- Pollution Levels -->
+        <label for="pollution_type">Pollution Type:</label>
+        <input type="text" id="pollution_type" name="pollution_type" required>
+
+        <label for="pollution_level">Pollution Level:</label>
+        <input type="number" id="pollution_level" name="pollution_level" step="any" required>
+
+        <!-- Chemical Attributes -->
+        <label for="chemical_name">Chemical Name:</label>
+        <input type="text" id="chemical_name" name="chemical_name" required>
+
+        <label for="chemical_value">Chemical Value:</label>
+        <input type="number" id="chemical_value" name="chemical_value" step="any" required>
+
+        <!-- Biological Data -->
+        <label for="species_name">Species Name:</label>
+        <input type="text" id="species_name" name="species_name" required>
+
+        <label for="species_count">Species Count:</label>
+        <input type="number" id="species_count" name="species_count" required>
+
+        <!-- Temperature Fluctuations -->
+        <label for="temperature">Temperature (in Celsius):</label>
+        <input type="number" id="temperature" name="temperature" step="any" required>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
